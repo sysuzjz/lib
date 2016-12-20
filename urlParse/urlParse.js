@@ -30,6 +30,15 @@ urlParse.prototype = {
         return this.hostname;
     },
     getPort: function () {
+        // 当端口为默认时会返回空串
+        if (!this.port) {
+            if (this.protocol === 'http:') {
+                this.port = 80;
+            }
+            if (this.protocol === 'https:') {
+                this.port = 443;
+            }
+        }
         return this.port;
     },
     getPathname: function () {

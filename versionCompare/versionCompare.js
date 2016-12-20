@@ -1,4 +1,4 @@
-var compareVersion = (currentVersion, targetVersion) => {
+const compareVersion = (currentVersion, targetVersion) => {
 	const versionExp = new RegExp(/^\d+\.\d+\.\d+$/);
 	if (!versionExp.test(currentVersion) || !versionExp.test(targetVersion)) {
 		return false;
